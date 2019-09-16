@@ -30,8 +30,7 @@ render() {
               {item.name} ({USCurrencyFormat.format(item.cost)})
             </label>
           
-        <h2>Customize your laptop</h2>
-        {features}
+       
       
         <fieldset className="feature" key={featureHash}>
           <legend className="feature__name">
@@ -50,6 +49,7 @@ render() {
     }
 }
 }
+
 
     
     export default LaptopFeatures;
