@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 class CalculateTotal extends Component {
     render() {
         const summary = Object.keys(this.state.selected).map((feature, idx) => {
-            const featureHash = feature + '-' + idx;
+            
             const selectedOption = this.state.selected[feature];
         const total = Object.keys(this.state.selected).reduce(
             (acc, curr) => acc + this.state.selected[curr].cost,

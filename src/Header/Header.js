@@ -5,8 +5,7 @@ class Header extends Component {
         return (
             <header>
           <h1>ELF Computing | Laptops</h1>
-          <h2>Customize your laptop</h2>
-        {features}
+          
         </header>
         )
     }
