@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import LaptopFeatures from './LaptopFeatures/LaptopFeatures';
+import Header from './Header/Header';
+import Features from './Features/Features';
+import SummaryList from './SummaryList/SummaryList';
 
 // Normalizes string as a slug - a string that is safe to use
 // in both URLs and html attributes
@@ -44,7 +46,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <LaptopFeatures />
+        <Header />
+        <Features />
+        <SummaryList />
       
       </div>
     );

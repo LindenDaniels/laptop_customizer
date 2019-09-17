@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import Features from './Features/Features';
+import CalculateTotal from './CalculateTotal/CalculateTotal';
 
 class SummaryList extends Component {
     render() {
+      const features = Object.keys(this.props.features).map((feature, idx) => {
+        const featureHash = feature + '-' + idx;
         const USCurrencyFormat = new Intl.NumberFormat('en-US', {
             style: 'currency',
             currency: 'USD'
           });
-          const features = Object.keys(this.props.features).map((feature, idx) => {
-          const featureHash = feature + '-' + idx;
           
             return (
     
@@ -19,8 +20,12 @@ class SummaryList extends Component {
                 {USCurrencyFormat.format(selectedOption.cost)}
               </div>
             </div>
-          
-            )}
+            
+            );
+            
+              <CalculateTotal />
+      )
+            });
             }
         }
     
