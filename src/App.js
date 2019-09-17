@@ -35,14 +35,14 @@ class App extends Component {
         cost: 1500
       }
     }
-  }
+  };
   
-  const updateFeature = (feature, newValue) => {
+  updateFeature = (feature, newValue) => {
     const selected = Object.assign({}, this.state.selected);
     selected[feature] = newValue;
     this.setState({
       selected
-    });
+    })
   }
 
   render() {
@@ -53,7 +53,7 @@ class App extends Component {
         <SummaryList
         features = {Features} />
         <CalculateTotal
-         selected = {selected}/>
+         selected = {this.state.selected}/>
       
       </div>
     );
