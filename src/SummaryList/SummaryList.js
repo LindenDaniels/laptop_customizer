@@ -4,6 +4,7 @@ import CalculateTotal from '../CalculateTotal/CalculateTotal';
 
 class SummaryList extends Component {
     render() {
+      console.log(this.props);
       const features = Object.keys(this.props.features).map((feature, idx) => {
         const featureHash = feature + '-' + idx;
         const selectedOption = this.state.selected[feature];
