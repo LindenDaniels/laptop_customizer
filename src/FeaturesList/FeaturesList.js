@@ -1,18 +1,30 @@
 import React, { Component } from 'react';
-import Features from './Features';
+import Features from './Features/Features';
 
 class FeaturesList extends Component {
+    
     render() {
-        return(
-    <main>
-          <form className="main__form">
-          <h2>Customize your laptop</h2>
-        {Features}
-        
-          </form>
-     </main>
-        )
-        }
-}
+        return Object.keys(this.props.features).map((feature, idx) => {
+            const featureHash = feature + '-' + idx;
+            const options = this.props.features[feature].map(item => {
+                return (
+                    <Features
+                        item={item}
+                        feature={feature}
+                        selected={this.props.selected}
+                        updateFeature={this.props.updateFeature} />
+                );
+            });
 
+            return (
+                <fieldset className="feature" key={featureHash}>
+                    <legend className="feature__name">
+                        <h3>{feature}</h3>
+                    </legend>
+                    {options}
+                </fieldset>
+            );
+        });
+    }
+}
 export default FeaturesList;
