@@ -4,7 +4,7 @@ class Features extends Component {
     render() {
         
           
-          const options = this.props.features[feature].map(item => {
+          
             const itemHash = slugify(JSON.stringify(item));
             return (
               <div key={itemHash} className="feature__item">
