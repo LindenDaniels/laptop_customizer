@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Features from './Features/Features';
 
 class SummaryList extends Component {
     render() {
@@ -6,8 +7,21 @@ class SummaryList extends Component {
             style: 'currency',
             currency: 'USD'
           });
-        return (
-            
-        )
-    }
-}
+          const features = Object.keys(this.props.features).map((feature, idx) => {
+          const featureHash = feature + '-' + idx;
+          
+            return (
+    
+    <div className="summary__option" key={featureHash}>
+              <div className="summary__option__label">{feature} </div>
+              <div className="summary__option__value">{selectedOption.name}</div>
+              <div className="summary__option__cost">
+                {USCurrencyFormat.format(selectedOption.cost)}
+              </div>
+            </div>
+          
+            )}
+            }
+        }
+    
+  

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Features extends Component {
     render() {
         
-          const featureHash = feature + '-' + idx;
+          
           const options = this.props.features[feature].map(item => {
             const itemHash = slugify(JSON.stringify(item));
             return (
