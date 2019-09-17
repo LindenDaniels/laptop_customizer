@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Features from './Features/Features';
-import CalculateTotal from './CalculateTotal/CalculateTotal';
+import Features from '../Features/Features';
+import CalculateTotal from '../CalculateTotal/CalculateTotal';
 
 class SummaryList extends Component {
     render() {

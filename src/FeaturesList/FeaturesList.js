@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Features from './Features/Features';
+import Features from '../Features/Features';
 
 class FeaturesList extends Component {
     
