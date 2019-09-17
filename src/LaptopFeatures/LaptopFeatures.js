@@ -18,9 +18,7 @@ render() {
         </fieldset>
         
       );
-    
-    
-    }
+    })
     }
   }
   
