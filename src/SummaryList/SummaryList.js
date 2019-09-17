@@ -6,6 +6,7 @@ class SummaryList extends Component {
     render() {
       const features = Object.keys(this.props.features).map((feature, idx) => {
         const featureHash = feature + '-' + idx;
+        const selectedOption = this.state.selected[feature];
         const USCurrencyFormat = new Intl.NumberFormat('en-US', {
             style: 'currency',
             currency: 'USD'
@@ -22,11 +23,15 @@ class SummaryList extends Component {
             </div>
             
             );
+           
             
-              <CalculateTotal />
-      )
+              
             });
+            return (
+              <CalculateTotal />
+            )
             }
         }
+        export default SummaryList;
     
   
