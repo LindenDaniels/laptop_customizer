@@ -8,6 +8,7 @@ import SummaryList from './SummaryList/SummaryList';
 
 
 import './App.css';
+import CalculateTotal from './CalculateTotal/CalculateTotal';
 
 // This object will allow us to
 // easily convert numbers into US dollar values
@@ -35,13 +36,7 @@ class App extends Component {
     }
   }
   
-  updateFeature = (feature, newValue) => {
-    const selected = Object.assign({}, this.state.selected);
-    selected[feature] = newValue;
-    this.setState({
-      selected
-    });
-  }
+  
 
   render() {
     return (
@@ -50,6 +45,7 @@ class App extends Component {
         <Features />
         <SummaryList
         features = {Features} />
+        <CalculateTotal />
       
       </div>
     );
