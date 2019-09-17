@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import Header from './Header/Header';
 import Features from './Features/Features';
+import FeaturesList from './FeaturesList/FeaturesList';
+
 import SummaryList from './SummaryList/SummaryList';
+import DisplayTotal from './DisplayTotal/DisplayTotal';
 
 // Normalizes string as a slug - a string that is safe to use
 // in both URLs and html attributes
@@ -49,11 +52,17 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Features />
+        <FeaturesList
+        features = {this.props.features}
+        selected = {this.state.selected}
+        updateFeature={(feature, newItem) => this.updateFeature(feature, newItem)} />
         <SummaryList
-        features = {Features} />
+        
+        selected = {this.state.selected}
+        />
         <CalculateTotal
-         selected = {this.state.selected}/>
+        selected = {this.state.selected} />
+        <DisplayTotal />
       
       </div>
     );

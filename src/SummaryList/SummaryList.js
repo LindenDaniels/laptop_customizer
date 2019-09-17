@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import Features from '../Features/Features';
 import CalculateTotal from '../CalculateTotal/CalculateTotal';
+import DisplayTotal from '../DisplayTotal/DisplayTotal';
 
+const USCurrencyFormat = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD'
+});
 class SummaryList extends Component {
     render() {
-      console.log(this.props);
-      const features = Object.keys(this.props.features).map((feature, idx) => {
-        const featureHash = feature + '-' + idx;
-        const selectedOption = this.state.selected[feature];
-        const USCurrencyFormat = new Intl.NumberFormat('en-US', {
-            style: 'currency',
-            currency: 'USD'
-          });
-          
+      
+      
+      const items = Object.keys(this.props.selected).map((feature, idx) => {
+      const featureHash = feature + '-' + idx;
+      const selectedOption = this.state.selected[feature];
+        
             return (
-    
     <div className="summary__option" key={featureHash}>
               <div className="summary__option__label">{feature} </div>
               <div className="summary__option__value">{selectedOption.name}</div>
@@ -24,15 +25,17 @@ class SummaryList extends Component {
             </div>
             
             );
-           
-            
-              
-            });
+           });
             return (
-              <CalculateTotal />
+              <div>
+              {items}
+              <br />
+              <DisplayTotal />
+              </div>
             )
             }
-        }
+          }
+        
         export default SummaryList;
     
   

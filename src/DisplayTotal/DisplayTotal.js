@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CalculateTotal from './CalculateTotal/CalculateTotal';
+import CalculateTotal from '../CalculateTotal/CalculateTotal';
 
 class DisplayTotal extends Component {
     render() {

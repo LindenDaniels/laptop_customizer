@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FeaturesList from '../FeaturesList/FeaturesList';
+
 import slugify from 'slugify';
 // This object will allow us to
 // easily convert numbers into US dollar values
