@@ -15,6 +15,7 @@ import CalculateTotal from './CalculateTotal/CalculateTotal';
 
 
 class App extends Component {
+  
   state = {
     selected: {
       Processor: {
@@ -36,7 +37,13 @@ class App extends Component {
     }
   }
   
-  
+  const updateFeature = (feature, newValue) => {
+    const selected = Object.assign({}, this.state.selected);
+    selected[feature] = newValue;
+    this.setState({
+      selected
+    });
+  }
 
   render() {
     return (
@@ -45,7 +52,8 @@ class App extends Component {
         <Features />
         <SummaryList
         features = {Features} />
-        <CalculateTotal />
+        <CalculateTotal
+         selected = {selected}/>
       
       </div>
     );
