@@ -48,7 +48,8 @@ class App extends Component {
       <div className="App">
         <Header />
         <Features />
-        <SummaryList />
+        <SummaryList
+        features = {Features} />
       
       </div>
     );
