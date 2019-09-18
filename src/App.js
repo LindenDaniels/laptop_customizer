@@ -1,20 +1,10 @@
 import React, { Component } from 'react';
 import Header from './Header/Header';
-import Features from './Features/Features';
 import FeaturesList from './FeaturesList/FeaturesList';
-
-import SummaryList from './SummaryList/SummaryList';
 import DisplayTotal from './DisplayTotal/DisplayTotal';
-
-// Normalizes string as a slug - a string that is safe to use
-// in both URLs and html attributes
-
-
 import './App.css';
-import CalculateTotal from './CalculateTotal/CalculateTotal';
+import Summary from './Summary/Summary';
 
-// This object will allow us to
-// easily convert numbers into US dollar values
 
 
 class App extends Component {
@@ -49,20 +39,23 @@ class App extends Component {
   }
 
   render() {
+    
     return (
       <div className="App">
         <Header />
+        <form className="main__form">
+            <h2>Customize your laptop</h2>
         <FeaturesList
         features = {this.props.features}
         selected = {this.state.selected}
         updateFeature={(feature, newItem) => this.updateFeature(feature, newItem)} />
-        <SummaryList
+        </form>
         
-        selected = {this.state.selected}
-        />
-        <CalculateTotal
+        <Summary
         selected = {this.state.selected} />
-        <DisplayTotal />
+       
+        <DisplayTotal
+        selected = {this.state.selected} />
       
       </div>
     );

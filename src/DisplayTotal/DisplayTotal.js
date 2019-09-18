@@ -3,6 +3,7 @@ import CalculateTotal from '../CalculateTotal/CalculateTotal';
 
 class DisplayTotal extends Component {
     render() {
+        
     return (
         <section className="main__summary">
             <CalculateTotal

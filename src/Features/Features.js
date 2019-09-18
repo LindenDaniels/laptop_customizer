@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FeaturesList from '../FeaturesList/FeaturesList';
+
 
 import slugify from 'slugify';
 // This object will allow us to
@@ -20,7 +20,7 @@ class Features extends Component {
                   id={itemHash}
                   className="feature__option"
                   name={slugify(this.props.feature)}
-                  checked={this.props.item.name === this.state.selected[this.props.feature].name}
+                  checked={this.props.item.name === this.props.selected[this.props.feature].name}
                   onChange={e => this.props.updateFeature(this.props.feature, this.props.item)}
                 />
                  <label htmlFor={itemHash} className="feature__label">
